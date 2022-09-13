@@ -2,17 +2,21 @@
 
 .colors {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-gap: 1.5rem;
+    justify-content: center;
+    justify-items: center;
+    width: 80%;
     max-width: 600px;
     margin: 0 auto;
     padding: 0 20px 20px;
 }
 
 .btn {
-    width: 100%;
+    width: 20vh;
     height: 20vh;
     max-height: 200px;
+    max-width: 200px;
     border-radius: 10%;
     border: 6px solid #7146b3;
     
