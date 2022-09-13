@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="../globalstyle.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hangman</h1>
+        <h2>Pick letters to get clues to the hidden word.</h2>
+    </header>
+    <main>
+        <section class="subtitle">
+            <p>You can pick up to 8 letters to help you answer</p> 
+        </section>
+
+        <section>
+            <div class="letters" id="letterBoard"></div>
+            <div class="hiddenLetters" id="hiddenLetters"></div>
+            <div class="blanks" id="blankSpaces"></div>
+            <div class="lives">
+                <p>You have <span class="lifeNum"></span> guesses left</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -40,6 +40,13 @@ h2 {
     font-style: italic;
 }
 
+p {
+    font-family: Raleway, sans-serif;
+    color: darkslategray;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 img {
     width: 100%;
     max-width: 600px;
@@ -66,7 +73,7 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 400px;
+    max-width: 1000px;
     margin: 0 auto;
     padding-bottom: 20px;
 }

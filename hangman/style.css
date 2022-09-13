@@ -1,0 +1,40 @@
+.letters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 40px);
+    grid-gap: 10px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px 20px;
+    justify-content: center;
+}
+
+.letter {
+    width: 40px;
+}
+
+.blanks {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.blank {
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    margin: 0 5px;
+}
+
+.hiddenLetters {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.hidden {
+    visibility: hidden;
+    width: 40px;
+    text-align: center;
+    margin: 0 5px;
+}
