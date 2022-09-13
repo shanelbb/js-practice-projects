@@ -5,7 +5,7 @@ body {
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     min-height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 0 0 40px;
 }
 
 header {
@@ -13,6 +13,8 @@ header {
     min-height: 200px;
     margin: 0 0 30px;
     padding-top: 0;
+    border-bottom: 3px solid gainsboro;
+    box-shadow: 2px 0px 12px lightslategray;
 }
 
 h1,
@@ -40,10 +42,11 @@ h2 {
 
 img {
     width: 100%;
-    max-width: 500px;
-    max-height: 300px;
+    max-width: 600px;
+    max-height: 600px;
     object-fit: cover;
     object-position: center center;
+    box-shadow: 4px 0px 12px lightslategray;
 }
 
 button {
@@ -55,7 +58,7 @@ button {
     flex: 24px;
     font-weight: bold;
     padding: 10px;
-    border-radius: 10px;
+    box-shadow: 4px 0px 12px lightslategray;
 }
 
 .subtitle {
