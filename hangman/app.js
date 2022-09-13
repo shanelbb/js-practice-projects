@@ -28,8 +28,8 @@ fetch(`https://random-word-api.herokuapp.com/word?length=${num}`)
         const wordArray = data[0].split('')
         const word = data[0];
         console.log(word);
-        lives.innerText = word.length
-        lifeCount = word.length
+        lives.innerText = word.length + 2
+        lifeCount = word.length + 2
         wordArray.forEach(letter => {
             let blank = document.createElement('span')
             hidden = document.createElement('span')
@@ -47,6 +47,7 @@ fetch(`https://random-word-api.herokuapp.com/word?length=${num}`)
         const letterBtns = document.querySelectorAll('.letter')
         letterBtns.forEach(button => {
             button.addEventListener('click', () => {
+                button.style.backgroundColor = ('rebeccapurple')
                 if(str.includes(button.textContent)){
                     const matches = str.split('').filter(el => el === button.textContent)
                     items.forEach(item => {
@@ -57,6 +58,9 @@ fetch(`https://random-word-api.herokuapp.com/word?length=${num}`)
                 }
                 checkProgress(str, items)
                 lifeCount--
+                if(lifeCount <= 0){
+                    lifeCount = 0
+                }
                 lives.innerText = lifeCount
             })
         })
@@ -78,7 +82,7 @@ fetch(`https://random-word-api.herokuapp.com/word?length=${num}`)
             Swal.fire('Sorry!', `The answer was ${str.toUpperCase()}`, 'error')
             setTimeout(function(){
                 location = ''
-              },3000)
+              },2000)
        }
     }
 
