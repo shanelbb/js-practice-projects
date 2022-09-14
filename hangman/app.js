@@ -76,15 +76,15 @@ fetch(`https://random-word-api.herokuapp.com/word?length=${num}`)
         const itemsArr = Array.from(items)
        const checkAnswer = itemsArr.filter(item => item.style.visibility === "visible")
        if(checkAnswer.length === str.length){
-           Swal.fire('Great Job!', 'You guessed the word.', 'success')
+           Swal.fire('Great Job!', `You guessed the word. <br> ${str.toUpperCase()}`, 'success')
            setTimeout(function(){
             window.location.reload(false)
-          },2000)
+          },3000)
         }
         
         if(lifeCount === 1 && checkAnswer.length != str.length){
             lives.innerText = 0
-            Swal.fire('Sorry!', `The answer was ${str.toUpperCase()}`, 'error')
+            Swal.fire('Sorry!', `The answer was <br>${str.toUpperCase()}`, 'error')
             setTimeout(function(){
                 window.location.reload(false)
               },2000)
@@ -101,13 +101,10 @@ function checkTypedAnswer() {
     if(input.value === wordArr[0]){
         Swal.fire('Great Job!', 'You guessed the word.', 'success')
         setTimeout(function(){
-         location = ''
+            window.location.reload(false)
        },2000)
     } else {
-        Swal.fire('Sorry!', `The answer was ${wordArr[0].toUpperCase()}`, 'error')
-            setTimeout(function(){
-                location = ''
-              },2000)
+        Swal.fire('Sorry!', `That is incorrect. Try again`, 'error')
     }
 
 }
@@ -123,5 +120,4 @@ submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
     checkTypedAnswer()
     closeModal()
-    
 })
