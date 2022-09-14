@@ -103,8 +103,10 @@ function checkTypedAnswer() {
         setTimeout(function(){
             window.location.reload(false)
        },2000)
+       input.value = ''
     } else {
         Swal.fire('Sorry!', `That is incorrect. Try again`, 'error')
+        input.value = ''
     }
 
 }
