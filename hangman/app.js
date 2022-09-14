@@ -4,6 +4,9 @@ const board = document.querySelector('#letterBoard')
 const blanks = document.querySelector('.blanks')
 const hiddenLetters = document.querySelector('.hiddenLetters')
 const lives = document.querySelector('.lifeNum')
+const modal = document.querySelector('.outerModal')
+const answerBtn = document.querySelector('#answerBtn')
+const submitBtn = document.querySelector('#submitBtn')
 
 // dynamically create letter buttons
 const makeBtns = (arr) => {
@@ -21,13 +24,15 @@ makeBtns(alphabet)
 // random number between 3 & 12 for number of words from API
 const num = Math.floor((Math.random() * 9) + 3)
 let lifeCount
+let wordArr = []
 
 fetch(`https://random-word-api.herokuapp.com/word?length=${num}`)
     .then(res => res.json())
     .then(data => {
         const wordArray = data[0].split('')
         const word = data[0];
-        console.log(word);
+        wordArr.push(word)
+        console.log(wordArr);
         lives.innerText = word.length + 2
         lifeCount = word.length + 2
         wordArray.forEach(letter => {
@@ -73,7 +78,7 @@ fetch(`https://random-word-api.herokuapp.com/word?length=${num}`)
        if(checkAnswer.length === str.length){
            Swal.fire('Great Job!', 'You guessed the word.', 'success')
            setTimeout(function(){
-            location = ''
+            window.location.reload(false)
           },2000)
         }
         
@@ -81,11 +86,42 @@ fetch(`https://random-word-api.herokuapp.com/word?length=${num}`)
             lives.innerText = 0
             Swal.fire('Sorry!', `The answer was ${str.toUpperCase()}`, 'error')
             setTimeout(function(){
-                location = ''
+                window.location.reload(false)
               },2000)
        }
     }
 
+function openModal() {    
+    modal.style.display = 'block'
+}
+
+function checkTypedAnswer() {
+    const input = document.querySelector('input')
+    console.log(input.value);
+    if(input.value === wordArr[0]){
+        Swal.fire('Great Job!', 'You guessed the word.', 'success')
+        setTimeout(function(){
+         location = ''
+       },2000)
+    } else {
+        Swal.fire('Sorry!', `The answer was ${wordArr[0].toUpperCase()}`, 'error')
+            setTimeout(function(){
+                location = ''
+              },2000)
+    }
+
+}
+
+function closeModal() {
+    modal.style.display = 'none'
+}
 
 
+answerBtn.addEventListener('click', openModal)
 
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    checkTypedAnswer()
+    closeModal()
+    
+})

@@ -40,3 +40,67 @@
     text-align: center;
     margin: 0 5px;
 }
+
+.home {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 210px);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.outerModal {
+    display: none;
+    z-index: 1; /* Sit on top */
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    overflow: auto; /* Enable scroll if needed */
+    background: rgba(72,61,139, 0.5);
+}
+
+.modal {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 40%;
+    width: 80%;
+    max-width: 500px;
+    max-height: 125px;
+    margin: 0 auto;
+    background-color: gainsboro;
+    border: 2px solid #483d8b;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.answer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Raleway, san-serif;
+}
+
+.answer label {
+    padding-bottom: 20px;
+}
+
+.answer input {
+    width: 80%;
+    max-width: 400px;
+}
+
+.answer button {
+    background-color: darkslateblue;
+    width: 150px;
+    margin: 20px 0 0;
+}
