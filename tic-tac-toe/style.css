@@ -1,0 +1,27 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    grid-gap: 0;
+    max-width: 300px;
+    margin: 40 auto 0;
+}
+
+li {
+    border: 1px solid darkslategrey;
+    height: 25vh;
+    width: 25vh;
+    max-width: 100px;
+    max-height: 100px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
